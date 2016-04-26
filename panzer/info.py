@@ -65,10 +65,8 @@ def start_logger(options):
         if os.path.exists(filename):
             os.remove(filename)
     # - set 'quiet' mode if requested
-    if options['panzer']['quiet']:
-        verbosity_level = 'WARNING'
-    else:
-        verbosity_level = 'INFO'
+	# NOPE. Always be quiet.
+    verbosity_level = 'WARNING'
     config['handlers']['console']['level'] = verbosity_level
     # - set 'strict' mode if requested
     if options['panzer']['strict']:
